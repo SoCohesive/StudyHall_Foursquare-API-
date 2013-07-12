@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MlD-kS-xgR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Q2R-Zl-rtR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="2" id="K8I-5f-PcD"/>
+                        </connections>
+                    </mapView>
+                    <navigationItem key="navigationItem" id="HW9-ta-nmL"/>
+                    <connections>
+                        <outlet property="mapView" destination="Q2R-Zl-rtR" id="cJy-b8-0GQ"/>
+                        <segue destination="l8P-IK-deR" kind="push" identifier="pushToDetails" id="71J-oM-EXH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="6"/>
+        </scene>
+        <!--Study Hall Tips Detail View Controller-->
+        <scene sceneID="xz2-Z7-dmW">
+            <objects>
+                <viewController id="l8P-IK-deR" customClass="StudyHallTipsDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HMZ-Dd-5CU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wAd-SS-yPV">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0M0-kh-xh6"/>
+                                    <constraint firstAttribute="height" constant="333" id="usL-Be-u6Q"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="l8P-IK-deR" id="Ini-f0-rIl"/>
+                                    <outlet property="delegate" destination="l8P-IK-deR" id="nD3-OU-Dfz"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJQ-oY-zOg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fJQ-oY-zOg" firstAttribute="top" secondItem="HMZ-Dd-5CU" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Thj-oO-DB7"/>
+                            <constraint firstItem="wAd-SS-yPV" firstAttribute="leading" secondItem="HMZ-Dd-5CU" secondAttribute="leading" constant="5" id="XYl-Iw-Jkv"/>
+                            <constraint firstItem="wAd-SS-yPV" firstAttribute="top" secondItem="HMZ-Dd-5CU" secondAttribute="top" constant="161" id="fvo-t7-1ia"/>
+                            <constraint firstItem="fJQ-oY-zOg" firstAttribute="leading" secondItem="HMZ-Dd-5CU" secondAttribute="leading" constant="36" id="lt7-o6-nR3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y7w-K1-uWp"/>
+                    <connections>
+                        <outlet property="studyhallNameLabel" destination="fJQ-oY-zOg" id="ie4-55-eKQ"/>
+                        <outlet property="tableView" destination="wAd-SS-yPV" id="lKq-DD-fu3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbD-GM-OLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="16"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Soo-sU-5za">
+            <objects>
+                <navigationController id="MlD-kS-xgR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59O-EK-Kt2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="U2W-62-Giv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9S5-vF-rJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="-29"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="StudyHallTipsDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StudyHallTipsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="studyhallNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
